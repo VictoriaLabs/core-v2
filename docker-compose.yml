@@ -1,4 +1,4 @@
-version: '3.8'
+version: "3.8"
 
 services:
     vlabs-app:
@@ -6,7 +6,7 @@ services:
             context: .
             dockerfile: Dockerfile
         ports:
-            - '8000:8000'
+            - "8000:8000"
         environment:
             - PORT=8000
             - APP_NAME=Laravel
@@ -25,7 +25,7 @@ services:
             - ./:/var/www/html
         networks:
             - app
-        command: bash -c "cp .env.example .env && php artisan key:genrerate && composer install --ignore-platform-reqs && php artisan migrate && php artisan serve --host=0.0.0.0 --port=8000"
+        command: bash -c "cp .env.example .env && php artisan key:generate && composer install --ignore-platform-reqs && php artisan migrate && php artisan serve --host=0.0.0.0 --port=8000"
 
     vlabs-mariadb:
         image: mariadb:latest
@@ -40,18 +40,18 @@ services:
         networks:
             - app
         ports:
-            - "3309:3306"
+            - "3306:3306"
     vlabs-phpmyadmin:
         image: phpmyadmin/phpmyadmin
         environment:
             PMA_HOST: vlabs-mariadb
             PMA_PORT: 3306
         ports:
-            - '8080:80'
+            - "8080:80"
         networks:
             - app
         depends_on:
-            - mariadb
+            - vlabs-mariadb
 networks:
     app:
 volumes:
