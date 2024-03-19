@@ -51,7 +51,7 @@ services:
         networks:
             - app
         depends_on:
-            - mariadb
+            - vlabs-mariadb
 networks:
     app:
 volumes:

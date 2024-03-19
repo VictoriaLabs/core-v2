@@ -29,8 +29,15 @@ Route::name("dashboard.")->prefix("dashboard")->group(function () {
     Route::name("oauth.")->prefix("oauth")->group(function () {
         Route::get("/", [OauthController::class , "index"])->name("index");
         Route::post("/", [OauthController::class, "addService"])->name("add-service");
+        Route::delete("/{service}", [OauthController::class, "deleteOauth"])->name("delete-oauth");
     });
 });
+Route::name("oauth.")->prefix("oauth")->middleware("auth")->group(function () {
+    Route::name("callback.")->prefix("callback")->group(function () {
+        Route::get("twitch", [OauthController::class, "twitchCallback"])->name("twitch");
+    });
+});
+
 
 Route::get('/about', function () {
     return view('about');
