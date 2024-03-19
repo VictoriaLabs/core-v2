@@ -16,7 +16,7 @@ class CreateSessionCookiesTable extends Migration
         Schema::create('session_cookies', function (Blueprint $table) {
             $table->id();
             $table->string('service');
-            $table->text('cookies');
+            $table->json('cookies');
         });
     }
 
