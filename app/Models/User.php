@@ -75,4 +75,9 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    public function Oauth()
+    {
+        return $this->hasMany(Oauth::class);
+    }
 }

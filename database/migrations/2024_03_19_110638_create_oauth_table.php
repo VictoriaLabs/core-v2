@@ -21,6 +21,7 @@ class CreateOauthTable extends Migration
             $table->string('token_type');
             $table->timestamp('expired_at');
             $table->string('refresh_token');
+            $table->timestamps();
         });
     }
 

@@ -32,7 +32,7 @@
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
         <!-- Sidebar - Brand -->
-        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{ url('/home') }}">
+        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{ route("dashboard.home") }}">
             <div class="sidebar-brand-icon rotate-n-15">
                 <i class="fas fa-laugh-wink"></i>
             </div>
@@ -105,7 +105,12 @@
                 <span>{{ __('Profile') }}</span>
             </a>
         </li>
-
+        <li class="nav-item {{ Nav::isRoute('dashboard.oauth.index') }}">
+            <a class="nav-link" href="{{ route('dashboard.oauth.index') }}">
+                <i class="fas fa-fw fa-link"></i>
+                <span>{{ __('Oauth') }}</span>
+            </a>
+        </li>
         <!-- Nav Item - About -->
         <li class="nav-item {{ Nav::isRoute('about') }}">
             <a class="nav-link" href="{{ route('about') }}">
@@ -317,8 +322,38 @@
             <!-- Begin Page Content -->
             <div class="container-fluid">
 
-                @yield('main-content')
+                @if (session('success'))
+                    <div class="alert alert-success border-left-success alert-dismissible fade show" role="alert">
+                        {{ session('success') }}
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                @endif
 
+                @if (session('status'))
+                    <div class="alert alert-success border-left-success" role="alert">
+                        {{ session('status') }}
+                    </div>
+                @endif
+
+                @if ($errors->any())
+                    <div class="alert alert-danger border-left-danger" role="alert">
+                        <ul class="pl-4 my-2">
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
+
+
+                <!-- Page Heading -->
+                <h1 class="h3 mb-4 text-gray-800">@yield('title')</h1>
+
+                <div class="row">
+                    @yield('main-content')
+                </div>
             </div>
             <!-- /.container-fluid -->
 
