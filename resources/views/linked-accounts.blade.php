@@ -24,11 +24,11 @@
     <div class="row">
         <!-- Discord card  -->
         <div class="col-xl-3 col-md-6 mb-4">
-            <div class="card border-left-primary shadow h-100 py-2">
+            <div class="card border-left-discord shadow h-100 py-2">
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
-                            <div class="text-s fw-bold text-primary text-uppercase mb-1">Discord</div>
+                            <div class="text-s fw-bold text-discord text-uppercase mb-1">Discord</div>
                             <div class="text-s mb-2">Account ➜ <span class="text-s fw-bold">{{ "Pseudo" }}</span></div>
                             <form method="GET" action="{{ route("dashboard.accounts.discord") }}">
                                 @csrf
@@ -50,11 +50,11 @@
 
         <!-- Twitch card  -->
         <div class="col-xl-3 col-md-6 mb-4">
-            <div class="card border-left-primary shadow h-100 py-2">
+            <div class="card border-left-twitch shadow h-100 py-2">
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
-                            <div class="text-s fw-bold text-primary text-uppercase mb-1">Twitch</div>
+                            <div class="text-s fw-bold text-twitch text-uppercase mb-1">Twitch</div>
                             <div class="text-s mb-2">Account ➜ <span class="text-s fw-bold">{{ "Pseudo" }}</span></div>
                             <form method="POST" action="#">
                                 @csrf
@@ -76,11 +76,11 @@
 
         <!-- Kick card  -->
         <div class="col-xl-3 col-md-6 mb-4">
-            <div class="card border-left-success shadow h-100 py-2">
+            <div class="card border-left-kick shadow h-100 py-2">
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
-                            <div class="text-s fw-bold text-success text-uppercase mb-1">Kick</div>
+                            <div class="text-s fw-bold text-kick text-uppercase mb-1">Kick</div>
                             <div class="text-s mb-2">Account ➜ <span class="text-s fw-bold">{{ "Pseudo" }}</span></div>
                             <form method="POST" action="#">
                                 @csrf
@@ -93,7 +93,7 @@
                             </form> --}}
                         </div>
                         <div class="col-auto">
-                            <svg width="35" height="35" viewBox="0 0 440 440" xmlns="http://www.w3.org/2000/svg">
+                            <svg width="30" height="30" viewBox="0 0 440 440" style="opacity: 0.7;" xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd" clip-rule="evenodd" d="M33.2617 18.3331H169.263V108.222H213.04V62.1092H259.152V18.3331H392.817V151.999H349.041V198.112H302.928V241.888H349.041V288.002H392.817V421.666H259.152V377.89H213.04V331.778H169.263V421.666H33.2617V18.3331Z" fill="#dee2e6"/>
                             </svg>
                         </div>
@@ -104,11 +104,11 @@
 
         <!-- Youtube card  -->
         <div class="col-xl-3 col-md-6 mb-4">
-            <div class="card border-left-danger shadow h-100 py-2">
+            <div class="card border-left-youtube shadow h-100 py-2">
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
-                            <div class="text-s fw-bold text-danger text-uppercase mb-1">Youtube</div>
+                            <div class="text-s fw-bold text-youtube text-uppercase mb-1">Youtube</div>
                             <div class="text-s mb-2">Account ➜ <span class="text-s fw-bold">{{ "Pseudo" }}</span></div>
                             <form method="POST" action="#">
                                 @csrf
