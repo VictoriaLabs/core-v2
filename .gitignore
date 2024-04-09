@@ -13,3 +13,5 @@ yarn-error.log
 /.phpunit.cache
 storage/logs/*
 composer.lock
+
+/storage/logs/laravel.log
