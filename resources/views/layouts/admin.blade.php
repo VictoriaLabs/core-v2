@@ -5,12 +5,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Laravel SB Admin 2">
-    <meta name="author" content="Alejandro RH">
+    <meta name="author" content="Victorialabs">
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ 'Dashboard | VictoriaLabs' }}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
     <!-- Fonts -->
     <link href="{{ asset('vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet">
@@ -38,7 +39,7 @@
         </a>
 
         <!-- Divider -->
-        <hr class="sidebar-divider my-0">
+        <hr class="hr mx-3" />
 
         <!-- Nav Item - Dashboard -->
         <li class="nav-item {{ Nav::isRoute('dashboard.home') }}">
@@ -48,7 +49,7 @@
         </li>
 
         <!-- Divider -->
-        <hr class="sidebar-divider">
+        <hr class="hr mx-3" />
 
         <!-- Heading -->
         <div class="sidebar-heading">
@@ -56,8 +57,8 @@
         </div>
 
         <!-- Nav Item - Linked accounts -->
-        <li class="nav-item {{ Nav::isRoute('dashboard.accounts') }}">
-            <a class="nav-link" href="{{ route('dashboard.accounts') }}">
+        <li class="nav-item {{ Nav::isRoute('dashboard.accounts.account') }}">
+            <a class="nav-link" href="{{ route('dashboard.accounts.account') }}">
                 <i class="fas fa-fw fa-link"></i>
                 <span>{{ __('Linked accounts') }}</span>
             </a>
@@ -89,7 +90,7 @@
 
 
         <!-- Divider -->
-        <hr class="sidebar-divider">
+        <hr class="hr mx-3" />
 
         <!-- Heading -->
         <div class="sidebar-heading">
@@ -113,7 +114,7 @@
         </li>
 
         <!-- Divider -->
-        <hr class="sidebar-divider d-none d-md-block">
+        <hr class="hr mx-3" />
 
         <!-- Sidebar Toggler (Sidebar) -->
         <div class="text-center d-none d-md-inline">

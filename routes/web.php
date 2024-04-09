@@ -26,7 +26,7 @@ Route::name("dashboard.")->prefix("dashboard")->group(function () {
     Route::put('/profile', 'ProfileController@update')->name('profile.update');
 
     Route::name("accounts.")->prefix("accounts")->group(function () {
-        Route::get('/', 'LinkedAccountsController@index')->name('accounts');
+        Route::get('/', 'LinkedAccountsController@index')->name('account');
         Route::get('/discord', 'LinkedAccountsController@formulaire_discord')->name('discord');
     });
 
