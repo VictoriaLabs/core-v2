@@ -6,12 +6,14 @@ use App\Filament\Resources\FeatureResource\Pages;
 use App\Filament\Resources\FeatureResource\RelationManagers;
 use App\Models\Feature;
 use Filament\Forms;
+use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Filament\Tables\Columns\ImageColumn;
 
 class FeatureResource extends Resource
 {
@@ -23,7 +25,7 @@ class FeatureResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('icon')->label('Icon'),
+                FileUpload::make('image')->directory("features")->image()->previewable(),
                 Forms\Components\TextInput::make('title')->label('Title'),
                 Forms\Components\Textarea::make('description')->label('Description'),
                 Forms\Components\Toggle::make('is_new')->label('Is New'),
@@ -34,7 +36,11 @@ class FeatureResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('icon')->label('Icon'),
+                ImageColumn::make('image')
+                    ->label('Image')
+                    ->url(function ($record) {
+                        return asset('/app/public/features/' . $record->image);
+                    }),
                 Tables\Columns\TextColumn::make('title')->label('Title'),
                 Tables\Columns\TextColumn::make('description')->label('Description'),
                 Tables\Columns\BooleanColumn::make('is_new')->label('Is New'),

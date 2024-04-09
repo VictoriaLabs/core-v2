@@ -16,7 +16,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    dd(asset(Team::find(1)->image));
     return view('welcome');
 });
 

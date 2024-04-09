@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('features', function (Blueprint $table) {
             $table->id();
-            $table->string('icon')->nullable();
             $table->string('title');
+            $table->string("image")->nullable();
             $table->text('description');
             $table->boolean('is_new');
             $table->timestamps();
@@ -24,7 +24,7 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('features', function (Blueprint $table) {
-            $table->dropColumn(['icon', 'title', 'description', 'is_new']);
+            $table->dropColumn(['image', 'title', 'description', 'is_new']);
         });
     }
 };
