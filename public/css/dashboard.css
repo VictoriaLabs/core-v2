@@ -1,0 +1,30 @@
+.border-left-discord {
+    border-left: 0.25rem solid #7289da !important;
+}
+
+.border-left-twitch {
+    border-left: 0.25rem solid #6441a5 !important;
+}
+
+.border-left-kick {
+    border-left: 0.25rem solid #00e701 !important;
+}
+.border-left-youtube {
+    border-left: 0.25rem solid #ff0000 !important;
+}
+
+.text-discord {
+    color: #7289da !important;
+}
+
+.text-twitch {
+    color: #6441a5 !important;
+}
+
+.text-kick {
+    color: #00e701 !important;
+}
+
+.text-youtube {
+    color: #ff0000 !important;
+}
