@@ -8,6 +8,11 @@ RUN apt-get update \
         libzip-dev \
         && docker-php-ext-install zip pdo_mysql
 
+# Install PHP intl extension
+RUN apt-get update && apt-get install -y libicu-dev
+RUN docker-php-ext-configure intl
+RUN docker-php-ext-install intl
+
 # Installez Composer (gestionnaire de dépendances pour PHP)
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 

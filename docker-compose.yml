@@ -25,7 +25,7 @@ services:
             - ./:/var/www/html
         networks:
             - app
-        command: bash -c "cp .env.example .env && php artisan key:genrerate && composer install --ignore-platform-reqs && php artisan migrate && php artisan serve --host=0.0.0.0 --port=8000"
+        command: bash -c "cp .env.example .env && php artisan key:generate && composer install --ignore-platform-reqs && php artisan migrate && php artisan serve --host=0.0.0.0 --port=8000"
 
     vlabs-mariadb:
         image: mariadb:latest
@@ -51,7 +51,7 @@ services:
         networks:
             - app
         depends_on:
-            - mariadb
+            - vlabs-mariadb
 networks:
     app:
 volumes:
