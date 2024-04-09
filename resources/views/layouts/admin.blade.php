@@ -34,7 +34,7 @@
             <div class="sidebar-brand-icon rotate-n-15">
                 <i class="fas fa-laugh-wink"></i>
             </div>
-            <div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
+            <div class="sidebar-brand-text mx-3">Dashboard <sup>VictoriaLabs</sup></div>
         </a>
 
         <!-- Divider -->
@@ -46,6 +46,47 @@
                 <i class="fas fa-fw fa-tachometer-alt"></i>
                 <span>{{ __('Dashboard') }}</span></a>
         </li>
+
+        <!-- Divider -->
+        <hr class="sidebar-divider">
+
+        <!-- Heading -->
+        <div class="sidebar-heading">
+            {{ __('Manager') }}
+        </div>
+
+        <!-- Nav Item - Linked accounts -->
+        <li class="nav-item {{ Nav::isRoute('dashboard.accounts') }}">
+            <a class="nav-link" href="{{ route('dashboard.accounts') }}">
+                <i class="fas fa-fw fa-link"></i>
+                <span>{{ __('Linked accounts') }}</span>
+            </a>
+        </li>
+
+        <!-- Nav Item - Discord manager -->
+        <li class="nav-item {{ Nav::isRoute('dashboard.discord') }}">
+            <a class="nav-link" href="{{ route('dashboard.discord') }}">
+                <i class="fa-brands fa-discord"></i>
+                <span>{{ __('Discord') }}</span>
+            </a>
+        </li>
+
+        <!-- Nav Item - Discord manager -->
+        <li class="nav-item {{ Nav::isRoute('dashboard.chats') }}">
+            <a class="nav-link" href="{{ route('dashboard.chats') }}">
+                <i class="fa-solid fa-comments"></i>
+                <span>{{ __('Chat') }}</span>
+            </a>
+        </li>
+
+        <!-- Nav Item - Widgets -->
+        <li class="nav-item {{ Nav::isRoute('dashboard.widgets') }}">
+            <a class="nav-link" href="{{ route('dashboard.widgets') }}">
+                <i class="fa-solid fa-cube"></i>
+                <span>{{ __('Widgets') }}</span>
+            </a>
+        </li>
+
 
         <!-- Divider -->
         <hr class="sidebar-divider">

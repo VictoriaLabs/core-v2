@@ -25,6 +25,13 @@ Route::name("dashboard.")->prefix("dashboard")->group(function () {
     Route::get('/profile', 'ProfileController@index')->name('profile');
     Route::put('/profile', 'ProfileController@update')->name('profile.update');
 
+    Route::get('/accounts', 'LinkedAccountsController@index')->name('accounts');
+
+    Route::get('/discord', 'DiscordController@index')->name('discord');
+
+    Route::get('/chats', 'ChatController@index')->name('chats');
+
+    Route::get('/widgets', 'WidgetController@index')->name('widgets');
 });
 
 Route::get('/about', function () {

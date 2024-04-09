@@ -18,12 +18,12 @@
 
                     <div class="row">
                         <div class="col-lg-12">
-                            <h5 class="font-weight-bold">Laravel SB Admin 2</h5>
-                            <p>SB Admin 2 for Laravel.</p>
-                            <p>Recommend to install this preset on a project that you are starting from scratch, otherwise your project's design might break.</p>
+                            <h5 class="font-weight-bold">About VictoriaLabs</h5>
+                            <p>Current version : </p>
+                            <p>Dons ??</p>
                             <p>If you found this project useful, then please consider giving it a ⭐</p>
-                            <a href="https://github.com/aleckrh/laravel-sb-admin-2" target="_blank" class="btn btn-github">
-                                <i class="fab fa-github fa-fw"></i> Go to repository
+                            <a href="https://github.com/aleckrh/laravel-sb-admin-2" target="_blank" class="btn btn-warning">
+                                <i class="fa-solid fa-mug-hot"></i> Give us a coffee
                             </a>
                         </div>
                     </div>
@@ -32,12 +32,12 @@
 
                     <div class="row">
                         <div class="col-lg-12">
-                            <h5 class="font-weight-bold">Credits</h5>
-                            <p>Laravel SB Admin 2 uses some open-source third-party libraries/packages, many thanks to the web community.</p>
+                            <h5 class="font-weight-bold">Contact us</h5>
+                            <p>If you have any questions, problems or advice, please contact us :</p>
                             <ul>
-                                <li><a href="https://laravel.com" target="_blank">Laravel</a> - Open source framework.</li>
-                                <li><a href="https://github.com/DevMarketer/LaravelEasyNav" target="_blank">LaravelEasyNav</a> - Making managing navigation in Laravel easy.</li>
-                                <li><a href="https://startbootstrap.com/themes/sb-admin-2" target="_blank">SB Admin 2</a> - Thanks to Start Bootstrap.</li>
+                                <li><a href="#" target="_blank">Contact</a> - label.</li>
+                                <li><a href="#" target="_blank">Contact</a> - label.</li>
+                                <li><a href="#" target="_blank">Contact</a> - label.</li>
                             </ul>
                         </div>
                     </div>
