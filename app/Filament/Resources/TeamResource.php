@@ -13,6 +13,7 @@ use Filament\Tables\Table;
 use Filament\Forms\Components\Repeater;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Filament\Forms\Components\FileUpload;
 
 class TeamResource extends Resource
 {
@@ -26,6 +27,8 @@ class TeamResource extends Resource
             ->schema([
                 Forms\Components\TextInput::make('nom')->label('Nom'),
                 Forms\Components\TextInput::make('prenom')->label('Prénom'),
+                FileUpload::make('image')->directory("teams")->image()->previewable(),
+
                 Repeater::make('reseaux')
                     ->label('Réseaux')
                     ->addActionLabel('Ajouter un réseau')

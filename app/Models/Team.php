@@ -9,7 +9,7 @@ class Team extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['nom', 'prenom', 'reseaux'];
+    protected $fillable = ['nom', 'prenom', 'reseaux', 'image'];
 
     protected $casts = [
         'reseaux' => 'array',
