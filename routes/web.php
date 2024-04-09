@@ -28,6 +28,7 @@ Route::name("dashboard.")->prefix("dashboard")->group(function () {
     Route::name("accounts.")->prefix("accounts")->group(function () {
         Route::get('/', 'LinkedAccountsController@index')->name('account');
         Route::get('/discord', 'LinkedAccountsController@formulaire_discord')->name('discord');
+        Route::get('/discord/callback', 'DiscordController@handleDiscordCallback');
     });
 
     Route::get('/discord', 'DiscordController@index')->name('discord');
