@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AdvertiserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,3 +31,8 @@ Route::name("dashboard.")->prefix("dashboard")->group(function () {
 Route::get('/about', function () {
     return view('about');
 })->name('about');
+
+Route::get('/annonceur', 'AdvertiserController@index')->name('annonceurs');
+Route::post('/annonceurs', 'AdvertiserController@store');
+Route::post('/save-contract', [AdvertiserController::class, 'saveContract']);
+Route::delete('/delete-contract/{contractId}', 'AdvertiserController@deleteContract');

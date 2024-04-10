@@ -63,6 +63,13 @@
             </a>
         </li>
 
+        <!-- Nav Item - Annonceurs -->
+        <li class="nav-item">
+            <a class="nav-link" href="{{ route('annonceurs') }}">
+                <i class="fas fa-fw fa-bullhorn"></i>
+                <span>Contrats</span></a>
+        </li>
+
         <!-- Nav Item - About -->
         <li class="nav-item {{ Nav::isRoute('about') }}">
             <a class="nav-link" href="{{ route('about') }}">
@@ -329,5 +336,7 @@
 <script src="{{ asset('vendor/bootstrap/js/bootstrap.min.js') }}"></script>
 <script src="{{ asset('vendor/jquery-easing/jquery.easing.min.js') }}"></script>
 <script src="{{ asset('js/sb-admin-2.min.js') }}"></script>
+<script src="{{ asset('js/contract.js') }}"></script>
+@stack('scripts')
 </body>
 </html>
