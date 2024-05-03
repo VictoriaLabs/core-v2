@@ -63,6 +63,14 @@
             </a>
         </li>
 
+        <!-- Nav Item - Oauth -->
+        <li class="nav-item {{ Nav::isRoute('dashboard.oauth') }}">
+            <a class="nav-link" href="{{ route('dashboard.oauth') }}">
+                <i class="fas fa-fw fa-user"></i>
+                <span>{{ __('Authentification') }}</span>
+            </a>
+        </li>
+
         <!-- Nav Item - About -->
         <li class="nav-item {{ Nav::isRoute('about') }}">
             <a class="nav-link" href="{{ route('about') }}">

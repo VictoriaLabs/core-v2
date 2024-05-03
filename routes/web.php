@@ -25,8 +25,12 @@ Route::name("dashboard.")->prefix("dashboard")->group(function () {
     Route::get('/profile', 'ProfileController@index')->name('profile');
     Route::put('/profile', 'ProfileController@update')->name('profile.update');
 
+    Route::get('/oauth', 'OauthController@index')->name('oauth');
+    Route::get('/oauth/redirect', 'OauthController@redirectToGoogleProvider')->name('oauth.redirect');
+    Route::get('/oauth/callback/google', 'OauthController@handleGoogleProviderCallback');
 });
 
 Route::get('/about', function () {
     return view('about');
 })->name('about');
+

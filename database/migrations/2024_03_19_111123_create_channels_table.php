@@ -16,7 +16,7 @@ class CreateChannelsTable extends Migration
         Schema::create('channels', function (Blueprint $table) {
             $table->id();
             $table->string('identificator');
-            $table->foreignId('oauth_id')->constrained('oauth');
+            $table->foreignId('oauth_id')->constrained('oauths');
         });
     }
 

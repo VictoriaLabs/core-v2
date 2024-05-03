@@ -13,14 +13,15 @@ class CreateOauthTable extends Migration
      */
     public function up()
     {
-        Schema::create('oauth', function (Blueprint $table) {
+        Schema::create('oauths', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained('users');
             $table->foreignId('oauth_services_id')->constrained('oauth_services');
-            $table->string('access_token');
-            $table->string('token_type');
-            $table->timestamp('expired_at');
-            $table->string('refresh_token');
+            $table->string('access_token')->nullable();
+            $table->string('token_type')->nullable();
+            $table->timestamp('expired_at')->nullable();
+            $table->string('refresh_token')->nullable();
+            $table->timestamps();
         });
     }
 
