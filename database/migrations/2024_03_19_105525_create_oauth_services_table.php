@@ -15,11 +15,12 @@ class CreateOauthServicesTable extends Migration
     {
         Schema::create('oauth_services', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('btn_url');
-            $table->string('btn_label');
-            $table->string('btn_icon');
-            $table->boolean('enabled');
+            $table->string('name')->nullable();
+            $table->string('btn_url')->nullable();
+            $table->string('btn_label')->nullable();
+            $table->string('btn_icon')->nullable();
+            $table->boolean('enabled')->nullable();
+            $table->timestamps();
         });
     }
 

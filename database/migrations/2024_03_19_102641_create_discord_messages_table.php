@@ -19,7 +19,7 @@ class CreateDiscordMessagesTable extends Migration
             $table->foreignId('discord_server_id')->constrained('discord_servers');
             $table->string('channel_id');
             $table->foreignId('user_id')->constrained('users');
-            $table->text('message');
+            $table->longText('message');
             $table->json('datas');
         });
     }

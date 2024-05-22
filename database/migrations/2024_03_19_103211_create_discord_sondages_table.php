@@ -21,10 +21,10 @@ class CreateDiscordSondagesTable extends Migration
             $table->foreignId('user_id')->constrained('users');
             $table->string('title');
             $table->string('color');
-            $table->timestamp('creation_date');
+            $table->dateTime('creation_date');
             $table->json('choices');
             $table->boolean('is_multiple');
-            $table->timestamp('deadline_date')->nullable();
+            $table->dateTime('deadline_date')->nullable();
         });
     }
 

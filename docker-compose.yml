@@ -1,0 +1,58 @@
+version: "3.8"
+
+services:
+    vlabs-app:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        ports:
+            - "8000:8000"
+        environment:
+            - PORT=8000
+            - APP_NAME=Laravel
+            - APP_ENV=local
+            - APP_DEBUG=true
+            - APP_TIMEZONE=UTC
+            - APP_URL=http://localhost
+            - DB_CONNECTION=mariadb
+            - DB_HOST=vlabs-mariadb
+            - DB_PORT=3306
+            - DB_DATABASE=victorialabs
+            - DB_USERNAME=my_user
+            - DB_PASSWORD=my_password
+
+        volumes:
+            - ./:/var/www/html
+        networks:
+            - app
+        command: bash -c "cp .env.example .env && php artisan key:generate && composer install --ignore-platform-reqs && php artisan migrate && php artisan serve --host=0.0.0.0 --port=8000"
+
+    vlabs-mariadb:
+        image: mariadb:latest
+        platform: linux
+        environment:
+            MARIADB_ROOT_PASSWORD: my-secret-pw
+            MARIADB_DATABASE: victorialabs
+            MARIADB_USER: my_user
+            MARIADB_PASSWORD: my_password
+        volumes:
+            - db_data:/var/lib/mariadb
+        networks:
+            - app
+        ports:
+            - "3306:3306"
+    vlabs-phpmyadmin:
+        image: phpmyadmin/phpmyadmin
+        environment:
+            PMA_HOST: vlabs-mariadb
+            PMA_PORT: 3306
+        ports:
+            - "8080:80"
+        networks:
+            - app
+        depends_on:
+            - vlabs-mariadb
+networks:
+    app:
+volumes:
+    db_data:
